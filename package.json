@@ -1,0 +1,41 @@
+{
+  "name": "srepl",
+  "version": "0.0.1",
+  "description": "Save-Read-Eval-Print-Loop: The file is the REPL",
+  "main": "compiled/index.js",
+  "files": [
+    "compiled"
+  ],
+  "bin": {
+    "srepl": "./compiled/watch.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrejewski/srepl.git"
+  },
+  "keywords": [],
+  "author": "Chris Andrejewski <christopher.andrejewski@gmail.com> (http://chrisandrejewski.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrejewski/srepl/issues"
+  },
+  "homepage": "https://github.com/andrejewski/srepl#readme",
+  "devDependencies": {
+    "@types/node": "^18.13.0",
+    "prettier": "^2.8.4",
+    "typescript": "^4.9.5"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "dependencies": {
+    "source-map": "^0.7.4"
+  },
+  "peerDependencies": {
+    "typescript": "*"
+  }
+}

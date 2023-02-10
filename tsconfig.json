@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "strictFunctionTypes": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "preserveConstEnums": true,
+    "declaration": true,
+    "lib": ["es2019"],
+    "target": "es2019",
+    "allowJs": true,
+    "outDir": "compiled",
+    "jsx": "react"
+  },
+  "include": ["src"]
+}
