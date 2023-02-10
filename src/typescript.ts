@@ -15,9 +15,14 @@ export type FileMapper = {
   getOutputFilesForSourceFile(filePath: string): Mapping
 }
 
-export function makeTypescriptMapper(): FileMapper | undefined {
-  const root = process.cwd()
-  const tsconfigPath = findConfigFile(root, tsSys.fileExists, 'tsconfig.json')
+export const tsExtensions = ['.ts', '.tsx']
+
+export function makeTypescriptMapper(rootDir: string): FileMapper | undefined {
+  const tsconfigPath = findConfigFile(
+    rootDir,
+    tsSys.fileExists,
+    'tsconfig.json'
+  )
   if (!tsconfigPath) {
     return
   }
@@ -31,7 +36,7 @@ export function makeTypescriptMapper(): FileMapper | undefined {
   )
 
   const [src] = tsconfigFile.config.include
-  const sourceDir = resolve(root, src)
+  const sourceDir = resolve(rootDir, src)
 
   const { outDir } = parsedTsconfig.options
   if (!outDir) {
