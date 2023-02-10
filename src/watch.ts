@@ -207,13 +207,28 @@ async function run() {
 
 async function resetFiles(filePaths: Set<string>) {
   const touchedFiles = Array.from(filePaths)
+  const readFiles: (File | undefined)[] = await Promise.all(
+    touchedFiles.map(async (path) => {
+      let content
+      try {
+        content = await readFile(path, { encoding: 'utf8' })
+      } catch (error) {
+        return
+      }
 
-  const files: File[] = await Promise.all(
-    touchedFiles.map(async (fp) => ({
-      path: fp,
-      content: await readFile(fp, { encoding: 'utf8' }),
-    }))
+      return {
+        path,
+        content,
+      }
+    })
   )
+
+  const files: File[] = []
+  for (const file of readFiles) {
+    if (file) {
+      files.push(file)
+    }
+  }
 
   const updatedFiles = files.map((f) => ({
     path: f.path,
