@@ -2,7 +2,7 @@
 
 > Save-Read-Eval-Print-Loop: The file is the REPL
 
-REPLs are awesome. However, REPLs are still a mode of programming: you open up a separate terminal window, load up some of the code, and iterate on the side. The when things are sorted out in the REPL you pull them into the code.
+REPLs are awesome. However, REPLs are still a mode of programming: you open up a separate terminal window, load up some of the code, and iterate on the side. When things are sorted out in the REPL you pull them into the code.
 
 SREPL is different. There's no extra window to manage. Each file is its own REPL: save the file, it is read and evaluated, and the values are printed alongside the code as code comments. Close the session and the comments are removed.
 
