@@ -5,7 +5,7 @@ import { cwd } from 'process'
 import { LogEntry, parseLogEntry } from './log'
 import { getDefaultLogFilePath, updateCtx } from './tap'
 import { SourceMapConsumer } from 'source-map'
-import { FileMapper, tsExtensions } from './typescript'
+import { FileMapper, getErrorMessage, tsExtensions } from './typescript'
 import {
   applyLogEntriesToFileContent,
   stripLogEntriesFromFileContent,
@@ -57,7 +57,13 @@ async function run() {
           const mapper = (await import('./typescript')).makeTypescriptMapper(
             dir
           )
-          cachedMapper = { mapper: mapper }
+
+          if (typeof mapper === 'string') {
+            console.error(getErrorMessage(mapper))
+            cachedMapper = { mapper: undefined }
+          } else {
+            cachedMapper = { mapper }
+          }
         }
 
         const { mapper } = cachedMapper

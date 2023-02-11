@@ -53,21 +53,3 @@ import { p } from 'srepl'
 const s = p(['Hello', 'world'].join(', '))
 p(s.toUpperCase())
 ```
-
-## Language support
-
-SREPL supports JavaScript and TypeScript files.
-
-Typescript support relies on certain `tsconfig.json` values:
-
-- Only one `src` and only one `outDir` directory
-- `sourceMap` set to true
-- `noEmit` unset or set to false
-
-## Debugging
-
-Run `srepl` in debug mode to get a detailed look under the hood. If something isn't working as you expect, the logs may contain some useful information:
-
-```sh
-DEBUG=true npm run srepl
-```
