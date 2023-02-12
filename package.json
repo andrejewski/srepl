@@ -3,20 +3,22 @@
   "version": "0.0.1",
   "description": "Save-Read-Eval-Print-Loop: The file is the REPL",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "files": [
     "lib"
   ],
   "bin": {
     "srepl": "./lib/watch.js"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andrejewski/srepl.git"
   },
-  "keywords": [],
+  "keywords": [
+    "file",
+    "save",
+    "repl"
+  ],
   "author": "Chris Andrejewski <christopher.andrejewski@gmail.com> (http://chrisandrejewski.com)",
   "license": "ISC",
   "bugs": {
