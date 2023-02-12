@@ -20,7 +20,7 @@
     "lib": ["es2019"],
     "target": "es2019",
     "allowJs": true,
-    "outDir": "compiled",
+    "outDir": "lib",
     "jsx": "react"
   },
   "include": ["src"]

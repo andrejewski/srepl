@@ -2,12 +2,12 @@
   "name": "srepl",
   "version": "0.0.1",
   "description": "Save-Read-Eval-Print-Loop: The file is the REPL",
-  "main": "compiled/index.js",
+  "main": "lib/index.js",
   "files": [
-    "compiled"
+    "lib"
   ],
   "bin": {
-    "srepl": "./compiled/watch.js"
+    "srepl": "./lib/watch.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
