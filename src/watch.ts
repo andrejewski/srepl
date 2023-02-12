@@ -118,6 +118,7 @@ async function run() {
           }
         }
       } catch (error) {
+        console.error(error)
         continue
       } finally {
         updateCtx(false)
